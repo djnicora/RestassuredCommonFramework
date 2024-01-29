@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="D:/Dev/learnings/CommonRestAPIFramework/src/test/java/air/AirTest.java">
+        <classes>
+            <class name="air.AirTest">
+                <methods>
+                    <include name="createUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
