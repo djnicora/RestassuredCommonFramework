@@ -14,8 +14,8 @@ public class Payloads {
                 "  }";
     }
 
-    public static Map<String, String> createUserMap(String id, String firstName, String lastName, String subjectId) {
-        Map<String,String> payload = new HashMap<>();
+    public static Map<String, Object> createUserPayloadMap(String id, String firstName, String lastName, String subjectId) {
+        Map<String,Object> payload = new HashMap<>();
         payload.put("id",id);
         payload.put("firstName",firstName);
         payload.put("lastName",lastName);

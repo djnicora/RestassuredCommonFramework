@@ -10,11 +10,9 @@ import java.util.Map;
 public class JsonUtils {
 
     private static ObjectMapper objectMapper = new ObjectMapper();
-    public static Map<String, String> getJsonDataAsMap(String jsonFileName) throws IOException {
-        String env = System.getProperty("env")==null ? "qa" : System.getProperty("env");
+    public static Map<String, Object> getJsonDataAsMap(String jsonFilePath) throws IOException {
 
-        String jsonFilePath = System.getProperty("user.dir") + "/src/test/resources/"+env+"/" + jsonFileName;
-        Map<String, String> data = objectMapper.readValue(new File(jsonFilePath), new TypeReference<>() {
+        Map<String, Object> data = objectMapper.readValue(new File(jsonFilePath), new TypeReference<>() {
         });
 
         return data;
