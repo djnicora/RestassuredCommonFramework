@@ -6,7 +6,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Setup implements ITestListener {
