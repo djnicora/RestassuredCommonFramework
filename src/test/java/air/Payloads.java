@@ -23,4 +23,20 @@ public class Payloads {
         return payload;
     }
 
+    public static Map<String, Object> createVaultPayloadMap(String name, String description, String securityLevel, String vaultType, String additionalProp1, String additionalProp2, String additionalProp3) {
+        Map<String,Object> payload = new HashMap<>();
+        payload.put("name", name);
+        payload.put("description", description);
+        payload.put("securityLevel", securityLevel);
+        payload.put("vaultType", vaultType);
+
+        Map<String, Object> metadata = new HashMap<>();
+        metadata.put("additionalProp1", additionalProp1);
+        metadata.put("additionalProp2", additionalProp2);
+        metadata.put("additionalProp3", additionalProp3);
+
+        payload.put("metadata", metadata);
+        return payload;
+    }
+
 }

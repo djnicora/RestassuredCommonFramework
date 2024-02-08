@@ -1,3 +1,4 @@
 {
-  "createUserEndpoint": "http://localhost:3000/users"
+  "createUserEndpoint": "http://localhost:3000/users",
+  "createVaultEndpoint": "http://localhost:3000/users"
 }
