@@ -14,7 +14,7 @@ public class AirAPIs {
     }
 
     public Response createVault(Map<String, Object> createVaultPayload) {
-        String endpoint = (String) Base.dataFromJsonFile.get("createUserEndpoint");
+        String endpoint = (String) Base.dataFromJsonFile.get("createVaultEndpoint");
         return RestUtils.performPost(endpoint, createVaultPayload, new HashMap<>());
     }
 
