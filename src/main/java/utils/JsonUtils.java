@@ -8,13 +8,10 @@ import java.io.IOException;
 import java.util.Map;
 
 public class JsonUtils {
-
     private static ObjectMapper objectMapper = new ObjectMapper();
     public static Map<String, Object> getJsonDataAsMap(String jsonFilePath) throws IOException {
-
         Map<String, Object> data = objectMapper.readValue(new File(jsonFilePath), new TypeReference<>() {
         });
-
         return data;
     }
 

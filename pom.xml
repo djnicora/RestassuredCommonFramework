@@ -17,7 +17,7 @@
         <jackson>2.16.1</jackson>
         <gson>2.10.1</gson>
         <extentreports>5.1.1</extentreports>
-        <javaFaker>1.0.2</javaFaker>
+        <datafaker>1.6.0</datafaker>
         <lombok>1.18.30</lombok>
         <apcheCommons>3.14.0</apcheCommons>
         <maven-surefire-plugin-version>3.2.5</maven-surefire-plugin-version>
@@ -62,12 +62,13 @@
             <version>${extentreports}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <!-- https://mvnrepository.com/artifact/net.datafaker/datafaker -->
         <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>${javaFaker}</version>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>${datafaker}</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>

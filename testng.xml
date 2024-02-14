@@ -5,11 +5,15 @@
        <listener class-name="reporting.Setup"></listener>
    </listeners>
     <test verbose="2" preserve-order="true"
-          name="D:/Dev/learnings/CommonRestAPIFramework/src/test/java/air/AirTest.java">
+          name="D:/Dev/learnings/CommonRestAPIFramework/src/test/java/vault/VaultTest.java">
         <classes>
-            <class name="air.AirTest">
+            <class name="vault.VaultTest">
                 <methods>
-                    <include name="createUser"/>
+<!--                    <include name="createUser"/>-->
+<!--                    <include name="createVault"/>-->
+<!--                    <include name="createVaultRandom"/>-->
+                    <include name="createVaultFromPojo"/>
+                    <include name="createPermissionFromPojo"/>
                 </methods>
             </class>
         </classes>
