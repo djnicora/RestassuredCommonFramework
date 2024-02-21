@@ -1,7 +1,7 @@
 {
   "createUserEndpoint": "http://localhost:3000/users",
   "createVaultEndpoint": "https://document-routing.tinqin-dev.com/vaults",
-  "vaultEndpoint": "https://document-routing.tinqin-dev.com",
+  "vaultEndpoint": "https://idvault-routing-dev.tinqin-dev.com",
 
   "createPermissionEndpoint": "https://document-routing.tinqin-dev.com/vaults/{{vaultId}}/permissions"
 }

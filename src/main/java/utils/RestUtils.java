@@ -1,5 +1,6 @@
 package utils;
 
+import freemarker.core.InvalidReferenceException;
 import reporting.ExtentReportManager;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -7,6 +8,7 @@ import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.SpecificationQuerier;
 
+import java.io.File;
 import java.util.Map;
 
 import static io.restassured.RestAssured.baseURI;
@@ -21,6 +23,19 @@ public class RestUtils {
                 .contentType(ContentType.JSON)
                 .body(requestPayload);
     }
+
+    private static RequestSpecification getRequestSpecification(String endpoint, Map<String, Object> headers, File file) {
+        baseURI = endpoint;
+        return given().log().all()
+                .headers(headers)
+                .multiPart("file", file)
+//                .formParam("internalMetadata", "{\"field\": \"example\",\"secondField\": \"internalMetadata\"}")
+//
+                .contentType(ContentType.MULTIPART);
+
+    }
+
+
 
     private static void printRequestLogInReport(RequestSpecification requestSpecification){
         QueryableRequestSpecification queryableRequestSpecification = SpecificationQuerier.query(requestSpecification);
@@ -58,6 +73,14 @@ public class RestUtils {
 
     public static Response performPost(String endpoint, Object requestPayloadAsPojo, Map<String, Object> headers) {
         RequestSpecification requestSpecification = getRequestSpecification(endpoint, requestPayloadAsPojo, headers);
+        Response response= requestSpecification.post();
+        printRequestLogInReport(requestSpecification);
+        printResponseLogReport(response);
+        return response;
+    }
+
+    public static Response performPostUpload(String endpoint,  Map<String, Object> headers,File file) {
+        RequestSpecification requestSpecification = getRequestSpecification(endpoint, headers,file);
         Response response= requestSpecification.post();
         printRequestLogInReport(requestSpecification);
         printResponseLogReport(response);

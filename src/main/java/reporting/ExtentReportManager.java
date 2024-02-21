@@ -6,6 +6,7 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import freemarker.core.InvalidReferenceException;
 import io.restassured.http.Header;
 
 import java.time.LocalDateTime;
@@ -54,7 +55,7 @@ public class ExtentReportManager {
     }
 
     public static void logJson(String json) {
-        Setup.extentTest.get().info(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
+    Setup.extentTest.get().info(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
     }
 
     public static void logHeaders(List<Header> headerList) {

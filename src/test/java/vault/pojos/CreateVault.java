@@ -1,14 +1,13 @@
 package vault.pojos;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@EqualsAndHashCode
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Builder(toBuilder = true)
 public class CreateVault {
 
@@ -21,6 +20,8 @@ public class CreateVault {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
+    @EqualsAndHashCode
+    @JsonIgnoreProperties(ignoreUnknown = true)
     @Builder(toBuilder = true)
     public static class Metadata {
         private String additionalProp1 = "additionalProp1";

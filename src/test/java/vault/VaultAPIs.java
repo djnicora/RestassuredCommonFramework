@@ -4,7 +4,9 @@ import vault.pojos.CreatePermission;
 import vault.pojos.CreateVault;
 import io.restassured.response.Response;
 import utils.RestUtils;
+import vault.pojos.UploadDocument;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,5 +30,15 @@ public class VaultAPIs {
     public static Response createPermission(String endpoint, Map<String,String> header, CreatePermission createPermissionPayload) {
         String baseUri =  Base.dataFromJsonFile.get("vaultEndpoint")+endpoint;
         return RestUtils.performPost(baseUri, createPermissionPayload, new HashMap<>(header));
+    }
+
+//    public static Response uploadDocument(String endpoint, Map<String,String> header, File file) {
+//        String baseUri =  Base.dataFromJsonFile.get("vaultEndpoint")+endpoint;
+//        return RestUtils.performPostUpload(baseUri, new HashMap<>(header),file);
+//    }
+
+    public static Response uploadDocument(String endpoint, Map<String,String> header,File file) {
+        String baseUri =  Base.dataFromJsonFile.get("vaultEndpoint")+endpoint;
+        return RestUtils.performPostUpload(baseUri, new HashMap<>(header),file);
     }
 }

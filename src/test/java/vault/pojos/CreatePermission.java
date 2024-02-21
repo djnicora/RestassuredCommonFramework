@@ -1,5 +1,6 @@
 package vault.pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,8 +11,9 @@ import java.util.stream.Stream;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Builder(toBuilder = true)
+
 public class CreatePermission {
 
     public String role = Stream.of("owner","collaborator","editor","viewer").findAny().get();
